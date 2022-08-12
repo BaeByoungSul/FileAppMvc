@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "File Upload";
+}
+
+<div class="text-center">
+    <h1 class="display-4">File Upload</h1>
+</div>
+
+<div class="container">
+    <div class="mb-3 mt-3">
+        <form method="post" enctype="multipart/form-data"
+              asp-controller="FileService" 
+              asp-action="ActionFileUpload" >
+            <div class="mb-3 col-md-10">
+                <label class="form-label">Upload File</label>
+                <input type="file" name="file" class="form-control"/>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Upload" class="btn btn-primary"/>
+            </div>
+            <div class="form-group">
+                <span>@TempData["msg"]</span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@*
+<h1>File Upload</h1>
+
+<form method="post" enctype="multipart/form-data" 
+    asp-controller="FileService" 
+    asp-action="ActionFileUpload">
+    <div class="form-group">
+        <div class="col-md-10">
+            <p>Upload File</p>
+            <input type="file" name="file" />
+        </div>
+    </div>
+    <div class="form-group">
+        <input type = "submit" value="Upload file" />
+    </div>
+    <div class="form-group">
+        <span>@TempData["msg"]</span>
+    </div>
+</form>*@

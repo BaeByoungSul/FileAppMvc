@@ -1,0 +1,38 @@
+﻿@using FileAppMvc.Models
+@model List<FileViewModel>
+
+@{
+    ViewData["Title"] = "File download";
+}
+
+<html>
+    <head>
+       <meta name="viewport" content="width=device-width" />
+       <title>File Download </title>
+
+    </head>
+    <body>
+        <div class="text-center">
+            <h1 class="display-4">File Download</h1>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-responsive table-bordered">
+                <tr>
+                    <th>File Name</th>
+                    <th></th>
+                </tr>
+                @foreach(FileViewModel file in Model)
+                {
+                    <tr>
+                        <td>@file.FileName</td>
+                        <td> <a href="/FileService/Downloadfile?fileName=@file.FileName" >Download</a></td>
+                        @*<td>@Html.ActionLink("listfiles","downloadfile", new {fileName=file.FileName})</td>*@
+                        
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </body>
+
+</html>
